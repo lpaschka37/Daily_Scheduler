@@ -22,6 +22,8 @@ Published at:
 
 ![Screenshot of schedule](./assets/Daily_Scheduler.png)
 
+Link to page: https://lpaschka37.github.io/Daily_Scheduler
+
 
 ## Resources
 
