@@ -100,7 +100,7 @@ function changeColor() {
         // declare the variable that represents each iteration of the activity elements
         var a = $('#activity-' + c);
 
-        // determine if the time value in the object is less than, greater than, or equal to the current time
+        // check if the time value in the object is less than, greater than, or equal to the current time
         if (d < currentTime) {
 
             // apply grey background to activity slots for previous hours
@@ -123,6 +123,31 @@ function changeColor() {
             a.removeClass('past');
             a.addClass('present');
             a.removeClass('future');
+
+        }
+    }
+}
+
+function showSchedule() {
+
+    // display times and apply the color change
+    displayTimes();
+    changeColor();
+
+    var lastSchedule = JSON.parse(localStorage.getItem("daySchedule"));
+
+    // iterate through the daySchedule object
+    for (var r = 0; r < daySchedule.length; r++) {
+
+        // determine whether data exists in the copy of local storage data
+        if (lastSchedule !== null) {
+
+            // data exists, so render the data from local storage to each activity slot on the page
+            document.querySelector('#activity-' + r).innerHTML = lastSchedule[r].activity;
+
+        } else {
+
+            return;
 
         }
     }
@@ -152,31 +177,6 @@ function checkActivity(btnID) {
 // save the daySchedule to local storage
 function saveSchedule(scheduleJSON) {
     localStorage.setItem("daySchedule", JSON.stringify(scheduleJSON));
-}
-
-function showSchedule() {
-
-    // display times and apply the color change
-    displayTimes();
-    changeColor();
-
-    var lastSchedule = JSON.parse(localStorage.getItem("daySchedule"));
-
-    // iterate through the daySchedule object
-    for (var r = 0; r < daySchedule.length; r++) {
-
-        // determine whether data exists in the copy of local storage data
-        if (lastSchedule !== null) {
-
-            // data exists, so render the data from local storage to each activity slot on the page
-            document.querySelector('#activity-' + r).innerHTML = lastSchedule[r].activity;
-
-        } else {
-
-            return;
-
-        }
-    }
 }
 
 // clear the schedule when clicked
