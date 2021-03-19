@@ -1,4 +1,4 @@
-# Work-Day-Scheduler
+# Daily_Scheduler
 
 ## Description 
 
@@ -20,7 +20,7 @@ Published at:
 3. Click Clear button to clear schedule.
 4. Refresh page to see changes on clear.00
 
-![Screenshot of schedule](Assets/screenshot.png)
+![Screenshot of schedule](./assets/Daily_Scheduler.png)
 
 
 ## Resources
