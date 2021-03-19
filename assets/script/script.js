@@ -132,6 +132,7 @@ function changeColor() {
 function checkActivity(btnID) {
 
     var currentActivity = $('#activity-' + btnID).val();
+    //console.log (currentActivity)
 
     if (localStorage.getItem("daySchedule") !== null) {
         var scheduleCheck = JSON.parse(localStorage.getItem("daySchedule"));
